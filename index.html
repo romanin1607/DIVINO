@@ -40,6 +40,7 @@
 
         img {
             max-width: 100%;
+            height: auto;
             display: block;
         }
 
@@ -49,6 +50,7 @@
             width: 100%;
             z-index: 1000;
             backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
             background: rgba(3, 6, 17, 0.82);
             border-bottom: 1px solid rgba(255, 255, 255, 0.06);
         }
@@ -95,7 +97,7 @@
             min-height: calc(100vh - 88px);
             display: grid;
             place-items: center;
-            padding: 8rem 2rem 6rem;
+            padding: 10rem 2rem 6rem;
             position: relative;
             overflow: hidden;
             background: linear-gradient(180deg, rgba(3, 5, 16, 0.85) 0%, rgba(3, 5, 16, 0.96) 100%),
@@ -139,8 +141,8 @@
 
         .hero h1 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(3rem, 7vw, 5.6rem);
-            line-height: 0.98;
+            font-size: clamp(2.5rem, 7vw, 5.6rem);
+            line-height: 1.05;
             letter-spacing: -0.07em;
             margin-bottom: 1.5rem;
         }
@@ -171,7 +173,7 @@
 
         h2 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 3rem;
+            font-size: clamp(2rem, 5vw, 3rem);
             text-align: center;
             margin-bottom: 3rem;
             background: linear-gradient(90deg, #ffffff, #b8b8c7);
@@ -182,6 +184,7 @@
         .glass-card {
             background: var(--surface);
             backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
             border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 24px;
             padding: 2.5rem;
@@ -197,6 +200,7 @@
         .pack-container {
             perspective: 1200px;
             text-align: center;
+            width: 100%;
         }
 
         .pack-card-3d {
@@ -245,11 +249,9 @@
             grid-template-columns: 1fr 1fr;
             gap: 2rem 4rem;
             align-items: stretch;
-            grid-auto-rows: auto;
         }
 
         .pricing-tiers-section {
-            grid-column: 1 / 2;
             padding: 2rem;
             background: rgba(111, 226, 255, 0.06);
             border: 1px solid rgba(111, 226, 255, 0.12);
@@ -259,7 +261,6 @@
         }
 
         .price-card {
-            grid-column: 2 / 3;
             width: 100%;
             max-width: none;
             margin: 0;
@@ -274,7 +275,6 @@
         }
 
         .price-bottom {
-            grid-column: 1 / -1;
             display: flex;
             flex-direction: column;
             gap: 0.75rem;
@@ -339,6 +339,7 @@
             border-radius: 16px;
             padding: 0.75rem 0.9rem;
             margin-bottom: 0.9rem;
+            gap: 1rem;
         }
 
         .qty-label {
@@ -352,6 +353,7 @@
             background: #0f141f;
             border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 16px;
+            flex-shrink: 0;
         }
 
         .qty-btn {
@@ -379,20 +381,21 @@
         }
 
         .info-strip {
-            display: block;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
             width: 100%;
-            box-sizing: border-box;
+            gap: 0.5rem;
             margin: 1rem 0 0.4rem;
             padding: 0.8rem 1rem;
             background: #0b111d;
             border: 1px solid rgba(255, 255, 255, 0.06);
             border-radius: 14px;
             text-align: center;
-            white-space: nowrap;
         }
 
         .info-strip span {
-            display: inline-block;
             font-size: 0.95rem;
             color: #e7ebf2;
             font-weight: 600;
@@ -400,10 +403,8 @@
 
         .info-strip .separator {
             color: #6b7280;
-            /* darker gray for the pipe */
             font-size: 1rem;
             opacity: 1;
-            margin: 0 0.6rem;
         }
 
         .cta-whatsapp {
@@ -451,6 +452,7 @@
             transition: transform 0.25s ease, opacity 0.25s ease;
             background: linear-gradient(90deg, var(--accent), var(--accent-soft));
             color: #040916;
+            white-space: nowrap;
         }
 
         .btn-primary:hover {
@@ -482,7 +484,7 @@
 
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 4rem;
             align-items: center;
             max-width: 1100px;
@@ -538,7 +540,6 @@
             gap: 0.9rem;
             align-items: stretch;
             grid-auto-rows: 1fr;
-            /* make rows equal height */
             flex: 1 1 auto;
         }
 
@@ -639,7 +640,7 @@
             font-size: 0.98rem;
             line-height: 1.6;
             color: var(--text);
-            padding: 1rem 1rem;
+            padding: 1rem;
             border-radius: 18px;
             background: rgba(255, 255, 255, 0.04);
             border: 1px solid rgba(255, 255, 255, 0.08);
@@ -686,49 +687,8 @@
 
         .price-list li strong {
             color: #ffffff;
-            min-width: 100px;
+            min-width: auto;
             text-align: right;
-        }
-
-        @media (max-width: 860px) {
-            .pricing-container {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .tiers-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .info-grid {
-                grid-template-columns: 1fr;
-            }
-
-            nav {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .nav-links {
-                gap: 1rem;
-            }
-
-            .hero {
-                padding: 6.5rem 1.5rem 4rem;
-            }
-
-            .price-card {
-                padding: 2.5rem 1.5rem;
-                grid-column: 1 / -1;
-            }
-
-            .pricing-tiers-section {
-                grid-column: 1 / -1;
-            }
-
-            .price-bottom {
-                grid-column: 1 / -1;
-            }
         }
 
         .gallery-item {
@@ -783,42 +743,116 @@
         .final-cta {
             background: linear-gradient(135deg, #0a0022, #000);
             text-align: center;
-            padding: 160px 20px;
+            padding: 120px 20px;
         }
 
         .final-cta h2 {
-            font-size: 3.5rem;
+            font-size: clamp(2rem, 5vw, 3.5rem);
             margin-bottom: 1.5rem;
         }
 
         .final-cta p {
-            font-size: 1.4rem;
+            font-size: clamp(1rem, 3vw, 1.4rem);
             max-width: 700px;
             margin: 0 auto 3rem;
         }
 
+        /* --- MEDIA QUERIES APERFEIÇOADAS PARA MOBILE SEM QUEBRAR PC --- */
         @media (max-width: 860px) {
-            .pricing-container {
-                grid-template-columns: 1fr;
-                gap: 2rem;
+            section {
+                padding: 70px 0;
             }
 
             nav {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .nav-links {
+                padding: 1rem;
                 gap: 1rem;
             }
 
-            .hero {
-                padding: 6.5rem 1.5rem 4rem;
+            .nav-links {
+                display: none; /* Esconde links redundantes no mobile para limpar espaço */
             }
 
-            .price-card {
-                padding: 2.5rem 1.5rem;
+            .logo {
+                font-size: 1.4rem;
             }
+
+            .btn-primary {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.9rem;
+            }
+
+            .hero {
+                padding: 8rem 1rem 4rem;
+                min-height: auto;
+            }
+
+            .pricing {
+                padding: 3rem 1rem;
+            }
+
+            .pricing-container {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .tiers-grid {
+                grid-template-columns: repeat(2, 1fr); /* Mantém 2 colunas organizadas no celular */
+                gap: 0.6rem;
+            }
+
+            /* Faz o último item do desconto ocupar a largura total se for ímpar */
+            .tiers-grid button:last-child {
+                grid-column: span 2;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .pack-card-3d {
+                transform: none !important; /* Desativa inclinação fixa agressiva no mobile */
+                max-width: 100%;
+            }
+            
+            .pack-card-3d:hover {
+                transform: scale(1.01) !important;
+            }
+
+            .info-card {
+                padding: 1.5rem;
+            }
+
+            .rarity-list li, .price-list li {
+                font-size: 0.9rem;
+                padding: 0.8rem;
+                flex-wrap: wrap; /* Evita estouro de texto */
+            }
+
+            .final-cta {
+                padding: 80px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .tiers-grid {
+                grid-template-columns: 1fr; /* Em telas muito pequenas, empilha 1 por linha */
+            }
+            .tiers-grid button:last-child {
+                grid-column: span 1;
+            }
+        }
+
+        /* Classes de efeito scroll */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
@@ -868,24 +902,21 @@
                     <ul class="feature-list">
                         <li class="feature-item">
                             <i class="fas fa-check icon-gold"></i>
-                            <div><strong>7 Figurinhas por Pacote</strong><br><span class="feature-note">Sempre
-                                    novas</span></div>
+                            <div><strong>7 Figurinhas por Pacote</strong><br><span class="feature-note">Sempre novas</span></div>
                         </li>
                         <li class="feature-item">
                             <i class="fas fa-check icon-gold"></i>
-                            <div><strong>Chance de Douradas Raras</strong><br><span class="feature-note">As mais
-                                    cobiçadas</span></div>
+                            <div><strong>Chance de Douradas Raras</strong><br><span class="feature-note">As mais cobiçadas</span></div>
                         </li>
                         <li class="feature-item">
                             <i class="fas fa-check icon-gold"></i>
-                            <div><strong>Qualidade Premium</strong><br><span class="feature-note">Papel couchê +
-                                    holografia</span></div>
+                            <div><strong>Qualidade Premium</strong><br><span class="feature-note">Papel couchê + holografia</span></div>
                         </li>
                     </ul>
                 </div>
 
                 <div class="pack-container">
-                    <div class="glass-card pack-card-3d fade-in">
+                    <div class="glass-card pack-card-3d fade-in" id="vini-card">
                         <div class="pack-image-wrapper">
                             <img src="pacote.png" alt="Pacote de Figurinhas Oficial">
                         </div>
@@ -897,68 +928,70 @@
     </section>
 
     <section class="pricing" id="preco">
-        <div class="pricing-container">
-            <div class="pricing-tiers-section">
-                <div class="pricing-tiers">
-                    <div class="tiers-label">Desconto Escalonado</div>
-                    <div class="tiers-grid">
-                        <button type="button" class="tier-item" onclick="setQuantity(20)" data-min="20">
-                            <div class="tier-qty">20+ pacotes</div>
-                            <div class="tier-price">R$ 6,90</div>
-                            <div class="tier-save">-1,4%</div>
-                        </button>
-                        <button type="button" class="tier-item" onclick="setQuantity(40)" data-min="40">
-                            <div class="tier-qty">40+ pacotes</div>
-                            <div class="tier-price">R$ 6,80</div>
-                            <div class="tier-save">-2,9%</div>
-                        </button>
-                        <button type="button" class="tier-item" onclick="setQuantity(60)" data-min="60">
-                            <div class="tier-qty">60+ pacotes</div>
-                            <div class="tier-price">R$ 6,70</div>
-                            <div class="tier-save">-4,3%</div>
-                        </button>
-                        <button type="button" class="tier-item" onclick="setQuantity(80)" data-min="80">
-                            <div class="tier-qty">80+ pacotes</div>
-                            <div class="tier-price">R$ 6,60</div>
-                            <div class="tier-save">-5,7%</div>
-                        </button>
-                        <button type="button" class="tier-item" onclick="setQuantity(100)" data-min="100">
-                            <div class="tier-qty">100+ pacotes</div>
-                            <div class="tier-price">R$ 6,50</div>
-                            <div class="tier-save">-7,1%</div>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="price-card">
-                <p class="price-eyebrow">Pacote Oficial Copa 2026</p>
-                <div class="price-main">
-                    <span class="price-currency">R$</span>
-                    <span class="price-amount" id="total-price">7</span>
-                </div>
-                <p class="price-sub" id="price-sub">1 pacote · 7 figurinhas</p>
-                <div class="price-divider"></div>
-
-                <div class="qty-row">
-                    <span class="qty-label">Quantidade de pacotes</span>
-                    <div class="qty-controls">
-                        <button class="qty-btn" onclick="changeQuantity(-1)">−</button>
-                        <div class="qty-num" id="quantity">1</div>
-                        <button class="qty-btn" onclick="changeQuantity(1)">+</button>
+        <div class="container">
+            <div class="pricing-container">
+                <div class="pricing-tiers-section">
+                    <div class="pricing-tiers">
+                        <div class="tiers-label">Desconto Escalonado</div>
+                        <div class="tiers-grid">
+                            <button type="button" class="tier-item" onclick="setQuantity(20)" data-min="20">
+                                <div class="tier-qty">20+ pacotes</div>
+                                <div class="tier-price">R$ 6,90</div>
+                                <div class="tier-save">-1,4%</div>
+                            </button>
+                            <button type="button" class="tier-item" onclick="setQuantity(40)" data-min="40">
+                                <div class="tier-qty">40+ pacotes</div>
+                                <div class="tier-price">R$ 6,80</div>
+                                <div class="tier-save">-2,9%</div>
+                            </button>
+                            <button type="button" class="tier-item" onclick="setQuantity(60)" data-min="60">
+                                <div class="tier-qty">60+ pacotes</div>
+                                <div class="tier-price">R$ 6,70</div>
+                                <div class="tier-save">-4,3%</div>
+                            </button>
+                            <button type="button" class="tier-item" onclick="setQuantity(80)" data-min="80">
+                                <div class="tier-qty">80+ pacotes</div>
+                                <div class="tier-price">R$ 6,60</div>
+                                <div class="tier-save">-5,7%</div>
+                            </button>
+                            <button type="button" class="tier-item" onclick="setQuantity(100)" data-min="100">
+                                <div class="tier-qty">100+ pacotes</div>
+                                <div class="tier-price">R$ 6,50</div>
+                                <div class="tier-save">-7,1%</div>
+                            </button>
+                        </div>
                     </div>
                 </div>
 
-                <div class="info-strip">
-                    <span id="total-stickers">203 figurinhas</span>
-                    <span class="separator">|</span>
-                    <span id="price-per-sticker">R$ 6.90 por figurinha</span>
-                </div>
+                <div class="price-card">
+                    <p class="price-eyebrow">Pacote Oficial Copa 2026</p>
+                    <div class="price-main">
+                        <span class="price-currency">R$</span>
+                        <span class="price-amount" id="total-price">7</span>
+                    </div>
+                    <p class="price-sub" id="price-sub">1 pacote · 7 figurinhas</p>
+                    <div class="price-divider"></div>
 
-                <a href="#" id="whatsapp-btn" target="_blank" class="cta-whatsapp">
-                    <i class="fab fa-whatsapp"></i>
-                    Comprar pelo WhatsApp
-                </a>
+                    <div class="qty-row">
+                        <span class="qty-label">Quantidade de pacotes</span>
+                        <div class="qty-controls">
+                            <button class="qty-btn" onclick="changeQuantity(-1)">−</button>
+                            <div class="qty-num" id="quantity">1</div>
+                            <button class="qty-btn" onclick="changeQuantity(1)">+</button>
+                        </div>
+                    </div>
+
+                    <div class="info-strip">
+                        <span id="total-stickers">7 figurinhas</span>
+                        <span class="separator">|</span>
+                        <span id="price-per-sticker">R$ 7.00 por pacote</span>
+                    </div>
+
+                    <a href="#" id="whatsapp-btn" target="_blank" class="cta-whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                        Comprar pelo WhatsApp
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -970,14 +1003,10 @@
                 <div class="info-card fade-in">
                     <p class="card-eyebrow">Probabilidades Legend</p>
                     <ul class="rarity-list">
-                        <li><span class="rarity-label rarity-lilas">Legend lilás</span><span>1 a cada 190 pacotes</span>
-                        </li>
-                        <li><span class="rarity-label rarity-bronze">Legend bronze</span><span>1 a cada 317
-                                pacotes</span></li>
-                        <li><span class="rarity-label rarity-prata">Legend prata</span><span>1 a cada 900 pacotes</span>
-                        </li>
-                        <li><span class="rarity-label rarity-ouro">Legend ouro</span><span>1 a cada 1.900 pacotes</span>
-                        </li>
+                        <li><span class="rarity-label rarity-lilas">Legend lilás</span><span>1 a cada 190 pacotes</span></li>
+                        <li><span class="rarity-label rarity-bronze">Legend bronze</span><span>1 a cada 317 pacotes</span></li>
+                        <li><span class="rarity-label rarity-prata">Legend prata</span><span>1 a cada 900 pacotes</span></li>
+                        <li><span class="rarity-label rarity-ouro">Legend ouro</span><span>1 a cada 1.900 pacotes</span></li>
                     </ul>
                 </div>
                 <div class="info-card fade-in">
@@ -1037,7 +1066,7 @@
             document.getElementById('total-price').textContent = total;
             document.getElementById('price-sub').textContent = `${quantity} pacote${quantity > 1 ? 's' : ''} · ${quantity * 7} figurinhas`;
             document.getElementById('total-stickers').textContent = `${quantity * 7} figurinhas`;
-            document.getElementById('price-per-sticker').textContent = `R$ ${pricePerPack.toFixed(2)} por figurinha`;
+            document.getElementById('price-per-sticker').textContent = `R$ ${pricePerPack.toFixed(2)} por pacote`;
             updateTierHighlight();
 
             const msg = `Olá! Quero comprar *${quantity} pacote${quantity > 1 ? 's' : ''}* de figurinhas da Copa 2026.%0ATotal: *R$ ${total}*%0A%0AQual o endereço para entrega?`;
@@ -1072,7 +1101,7 @@
 
         function addMouseEffect() {
             const card = document.getElementById('vini-card');
-            if (card) {
+            if (card && window.innerWidth > 860) { // Aplica efeito 3D apenas no desktop para evitar bugs no touch
                 card.addEventListener('mousemove', (e) => {
                     const rect = card.getBoundingClientRect();
                     const x = (e.clientX - rect.left) / rect.width - 0.5;
@@ -1085,7 +1114,6 @@
             }
         }
 
-        // Controla a detecção do scroll para ativar o fade-in em todos os elementos configurados
         function handleScroll() {
             document.querySelectorAll('.fade-in').forEach(el => {
                 if (el.getBoundingClientRect().top <= window.innerHeight * 0.85) {
