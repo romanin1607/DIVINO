@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIVINO TERROIR • Figurinhas Copa 2026</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;family=Syne:wght@700;800&amp;family=DM+Sans:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg: #04060f;
+            --surface: rgba(18, 24, 44, 0.84);
+            --surface-strong: rgba(12, 16, 30, 0.96);
+            --accent: #6fe2ff;
+            --accent-soft: #9c6dff;
+            --gold: #ffd15d;
+            --text: #eef2ff;
+            --muted: #99a3b5;
+            --border: rgba(110, 226, 255, 0.14);
+            --shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: radial-gradient(circle at top center, rgba(112, 193, 255, 0.08), transparent 22%),
+                linear-gradient(180deg, #05060c 0%, #05060f 38%, #070a13 100%);
+            color: var(--text);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .header {
+            position: fixed;
+            inset: 0 auto auto 0;
+            width: 100%;
+            z-index: 1000;
+            backdrop-filter: blur(18px);
+            background: rgba(3, 6, 17, 0.82);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        nav {
+            max-width: 1360px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.7rem;
+            font-weight: 700;
+            letter-spacing: -0.05em;
+            background: linear-gradient(90deg, var(--accent), var(--accent-soft));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.97rem;
+            font-weight: 500;
+            transition: color 0.25s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .hero {
+            min-height: calc(100vh - 88px);
+            display: grid;
+            place-items: center;
+            padding: 8rem 2rem 6rem;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(180deg, rgba(3, 5, 16, 0.85) 0%, rgba(3, 5, 16, 0.96) 100%),
+                url('https://picsum.photos/id/1015/2000/1200') center/cover no-repeat;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 20% 20%, rgba(111, 226, 255, 0.14), transparent 18%),
+                radial-gradient(circle at 78% 10%, rgba(156, 109, 255, 0.12), transparent 16%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 920px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 999px;
+            padding: 0.85rem 1.4rem;
+            font-size: 0.95rem;
+            color: var(--text);
+            margin-bottom: 1.8rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-badge i {
+            color: #ffd166;
+        }
+
+        .hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(3rem, 7vw, 5.6rem);
+            line-height: 0.98;
+            letter-spacing: -0.07em;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            font-size: 1.05rem;
+            color: var(--muted);
+        }
+
+        .hero-actions {
+            display: inline-flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        section {
+            padding: 120px 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            background: linear-gradient(90deg, #ffffff, #b8b8c7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .glass-card {
+            background: var(--surface);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 2.5rem;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(111, 226, 255, 0.18);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+        }
+
+        .pack-container {
+            perspective: 1200px;
+            text-align: center;
+        }
+
+        .pack-card-3d {
+            max-width: 420px;
+            margin: 0 auto;
+            transform: rotateY(-12deg) rotateX(8deg);
+            transform-style: preserve-3d;
+            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease;
+            box-shadow: -18px 24px 46px rgba(0, 0, 0, 0.4);
+        }
+
+        .pack-card-3d:hover {
+            transform: rotateY(0deg) rotateX(0deg) scale(1.02);
+            box-shadow: 0 34px 72px rgba(0, 0, 0, 0.42);
+            border-color: rgba(111, 226, 255, 0.24);
+        }
+
+        .pack-image-wrapper {
+            background: #070912;
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+
+        .pack-image-wrapper img {
+            width: 100%;
+            height: auto;
+            border-radius: 14px;
+            transition: transform 0.5s ease;
+        }
+
+        .pack-card-3d:hover .pack-image-wrapper img {
+            transform: scale(1.04);
+        }
+
+        .pricing {
+            background: linear-gradient(180deg, #05060d 0%, #05090f 100%);
+            padding: 5rem 2rem;
+        }
+
+        .pricing-container {
+            max-width: 1320px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem 4rem;
+            align-items: stretch;
+            grid-auto-rows: auto;
+        }
+
+        .pricing-tiers-section {
+            grid-column: 1 / 2;
+            padding: 2rem;
+            background: rgba(111, 226, 255, 0.06);
+            border: 1px solid rgba(111, 226, 255, 0.12);
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .price-card {
+            grid-column: 2 / 3;
+            width: 100%;
+            max-width: none;
+            margin: 0;
+            padding: 2.4rem 1.8rem;
+            background: rgba(8, 12, 24, 0.98);
+            border: 1px solid rgba(111, 226, 255, 0.18);
+            border-radius: 28px;
+            box-shadow: 0 22px 60px rgba(0, 0, 0, 0.20);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .price-bottom {
+            grid-column: 1 / -1;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            align-items: center;
+            margin-top: 0.5rem;
+        }
+
+        .price-eyebrow {
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #7f8aa5;
+            text-align: center;
+            margin-bottom: 1.1rem;
+        }
+
+        .price-main {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .price-currency {
+            font-family: 'Syne', sans-serif;
+            font-size: 2.0rem;
+            font-weight: 700;
+            color: #a7abb8;
+            transform: translateY(-6px);
+        }
+
+        .price-amount {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(2.2rem, 4.2vw, 3.2rem);
+            font-weight: 800;
+            color: var(--text);
+            line-height: 1.05;
+            letter-spacing: -0.03em;
+        }
+
+        .price-sub {
+            text-align: center;
+            font-size: 0.92rem;
+            color: var(--muted);
+            margin-bottom: 1.4rem;
+        }
+
+        .price-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent);
+            margin: 2rem 0;
+        }
+
+        .qty-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #11161f;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 0.75rem 0.9rem;
+            margin-bottom: 0.9rem;
+        }
+
+        .qty-label {
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        .qty-controls {
+            display: flex;
+            align-items: center;
+            background: #0f141f;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+        }
+
+        .qty-btn {
+            width: 40px;
+            height: 40px;
+            border: none;
+            background: transparent;
+            color: var(--text);
+            font-size: 1.25rem;
+            cursor: pointer;
+            transition: background 0.15s ease;
+        }
+
+        .qty-btn:hover {
+            background: rgba(255, 255, 255, 0.07);
+        }
+
+        .qty-num {
+            width: 48px;
+            text-align: center;
+            font-family: 'Syne', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .info-strip {
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            margin: 1rem 0 0.4rem;
+            padding: 0.8rem 1rem;
+            background: #0b111d;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 14px;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .info-strip span {
+            display: inline-block;
+            font-size: 0.95rem;
+            color: #e7ebf2;
+            font-weight: 600;
+        }
+
+        .info-strip .separator {
+            color: #6b7280;
+            /* darker gray for the pipe */
+            font-size: 1rem;
+            opacity: 1;
+            margin: 0 0.6rem;
+        }
+
+        .cta-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            width: 100%;
+            margin: 1rem 0 0;
+            padding: 0.95rem 1rem;
+            background: linear-gradient(90deg, #22c55e, #16a34a);
+            color: #08100b;
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            border-radius: 14px;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .cta-whatsapp:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 18px 40px rgba(34, 197, 94, 0.23);
+        }
+
+        .price-footer {
+            display: flex;
+            justify-content: center;
+            gap: 0.8rem;
+            color: var(--muted);
+            font-size: 0.88rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            padding: 1rem 2rem;
+            border-radius: 999px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: transform 0.25s ease, opacity 0.25s ease;
+            background: linear-gradient(90deg, var(--accent), var(--accent-soft));
+            color: #040916;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            opacity: 0.95;
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            padding: 1rem 2rem;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: rgba(255, 255, 255, 0.06);
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-xl {
+            font-size: 1.4rem;
+            padding: 24px 60px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 4rem;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-heading {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .feature-item {
+            margin-bottom: 1rem;
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
+
+        .icon-gold {
+            color: #ffd700;
+            margin-top: 0.15rem;
+        }
+
+        .feature-note {
+            color: rgba(255, 255, 255, 0.72);
+        }
+
+        .pricing-tiers {
+            padding: 0;
+            background: transparent;
+            border: none;
+        }
+
+        .tiers-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #7f8aa5;
+            margin-bottom: 1rem;
+        }
+
+        .tiers-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.9rem;
+            align-items: stretch;
+            grid-auto-rows: 1fr;
+            /* make rows equal height */
+            flex: 1 1 auto;
+        }
+
+        .tier-item {
+            background: #0f141f;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            padding: 1.15rem 1rem;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            font-family: inherit;
+            color: inherit;
+            min-width: 0;
+            outline: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .tier-item:hover,
+        .tier-item:focus-visible {
+            background: rgba(111, 226, 255, 0.1);
+            border-color: rgba(111, 226, 255, 0.3);
+        }
+
+        .tier-item.tier-active {
+            background: rgba(34, 197, 94, 0.12);
+            border-color: rgba(34, 197, 94, 0.3);
+            box-shadow: 0 0 20px rgba(34, 197, 94, 0.15);
+        }
+
+        .tier-qty {
+            font-size: 0.78rem;
+            color: var(--muted);
+            margin-bottom: 0.35rem;
+        }
+
+        .tier-price {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: #22c55e;
+            margin-bottom: 0.2rem;
+        }
+
+        .tier-save {
+            font-size: 0.78rem;
+            color: #4ade80;
+            font-weight: 700;
+        }
+
+        .info-section {
+            background: #050505;
+            padding: 120px 0;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1.25rem;
+            align-items: stretch;
+        }
+
+        .info-card {
+            background: linear-gradient(180deg, rgba(8, 12, 24, 0.92), rgba(18, 24, 44, 0.96));
+            border: 1px solid rgba(111, 226, 255, 0.14);
+            border-radius: 28px;
+            padding: 2rem;
+            box-shadow: 0 24px 70px rgba(0, 0, 0, 0.22);
+        }
+
+        .card-eyebrow {
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.24em;
+            text-transform: uppercase;
+            color: #caa7ff;
+            margin-bottom: 1.5rem;
+        }
+
+        .rarity-list,
+        .price-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 0.85rem;
+        }
+
+        .rarity-list li,
+        .price-list li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            font-size: 0.98rem;
+            line-height: 1.6;
+            color: var(--text);
+            padding: 1rem 1rem;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: transform 0.25s ease, background 0.25s ease;
+        }
+
+        .rarity-list li:hover,
+        .price-list li:hover {
+            transform: translateY(-1px);
+            background: rgba(111, 226, 255, 0.08);
+        }
+
+        .rarity-label {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.35rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+        }
+
+        .rarity-lilas {
+            background: rgba(156, 109, 255, 0.18);
+            color: #d9c6ff;
+        }
+
+        .rarity-bronze {
+            background: rgba(212, 123, 0, 0.16);
+            color: #ffd7a3;
+        }
+
+        .rarity-prata {
+            background: rgba(203, 213, 225, 0.18);
+            color: #eef2ff;
+        }
+
+        .rarity-ouro {
+            background: rgba(255, 209, 93, 0.18);
+            color: #fff4c4;
+        }
+
+        .price-list li strong {
+            color: #ffffff;
+            min-width: 100px;
+            text-align: right;
+        }
+
+        @media (max-width: 860px) {
+            .pricing-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .tiers-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .hero {
+                padding: 6.5rem 1.5rem 4rem;
+            }
+
+            .price-card {
+                padding: 2.5rem 1.5rem;
+                grid-column: 1 / -1;
+            }
+
+            .pricing-tiers-section {
+                grid-column: 1 / -1;
+            }
+
+            .price-bottom {
+                grid-column: 1 / -1;
+            }
+        }
+
+        .gallery-item {
+            background: var(--surface);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 26px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            min-height: 420px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.03);
+        }
+
+        .footer {
+            background: #050509;
+            padding: 4rem 0 2rem;
+            text-align: center;
+        }
+
+        .footer p,
+        .footer a {
+            color: var(--muted);
+        }
+
+        .footer .logo {
+            font-size: 2rem;
+        }
+
+        .footer p {
+            opacity: 0.6;
+            margin: 1rem 0;
+        }
+
+        .footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .gallery-section {
+            background: #050505;
+        }
+
+        .final-cta {
+            background: linear-gradient(135deg, #0a0022, #000);
+            text-align: center;
+            padding: 160px 20px;
+        }
+
+        .final-cta h2 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .final-cta p {
+            font-size: 1.4rem;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+        }
+
+        @media (max-width: 860px) {
+            .pricing-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .hero {
+                padding: 6.5rem 1.5rem 4rem;
+            }
+
+            .price-card {
+                padding: 2.5rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <nav>
+            <div class="logo">DIVINO TERROIR</div>
+            <ul class="nav-links">
+                <li><a href="#produto">Produto</a></li>
+                <li><a href="#preco">Preço</a></li>
+                <li><a href="#galeria">Galeria</a></li>
+            </ul>
+            <a href="https://wa.me/553499437614" target="_blank" class="btn-primary">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-futbol" style="color: #ffd700;"></i>
+                <span>Edição Copa do Mundo 2026</span>
+            </div>
+            <h1>O Álbum<br>Começa Aqui</h1>
+            <p>Figurinhas premium da Copa do Mundo 2026. Pacotes com chance de tirar figurinhas douradas raras!</p>
+
+            <div class="hero-actions">
+                <a href="#preco" class="btn-primary">
+                    <i class="fas fa-shopping-cart"></i> Comprar Agora
+                </a>
+                <a href="https://wa.me/553499437614" target="_blank" class="btn-secondary">
+                    <i class="fab fa-whatsapp"></i> Falar com Vendedor
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="produto">
+        <div class="container">
+            <h2>Figurinhas da Copa 2026</h2>
+            <div class="product-grid">
+                <div class="glass-card fade-in">
+                    <h3 class="section-heading">Experiência Premium</h3>
+                    <ul class="feature-list">
+                        <li class="feature-item">
+                            <i class="fas fa-check icon-gold"></i>
+                            <div><strong>7 Figurinhas por Pacote</strong><br><span class="feature-note">Sempre
+                                    novas</span></div>
+                        </li>
+                        <li class="feature-item">
+                            <i class="fas fa-check icon-gold"></i>
+                            <div><strong>Chance de Douradas Raras</strong><br><span class="feature-note">As mais
+                                    cobiçadas</span></div>
+                        </li>
+                        <li class="feature-item">
+                            <i class="fas fa-check icon-gold"></i>
+                            <div><strong>Qualidade Premium</strong><br><span class="feature-note">Papel couchê +
+                                    holografia</span></div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="pack-container">
+                    <div class="glass-card pack-card-3d fade-in">
+                        <div class="pack-image-wrapper">
+                            <img src="pacote.png" alt="Pacote de Figurinhas Oficial">
+                        </div>
+                        <p class="pack-copy">Pacote com <strong>7 figurinhas</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing" id="preco">
+        <div class="pricing-container">
+            <div class="pricing-tiers-section">
+                <div class="pricing-tiers">
+                    <div class="tiers-label">Desconto Escalonado</div>
+                    <div class="tiers-grid">
+                        <button type="button" class="tier-item" onclick="setQuantity(20)" data-min="20">
+                            <div class="tier-qty">20+ pacotes</div>
+                            <div class="tier-price">R$ 6,90</div>
+                            <div class="tier-save">-1,4%</div>
+                        </button>
+                        <button type="button" class="tier-item" onclick="setQuantity(40)" data-min="40">
+                            <div class="tier-qty">40+ pacotes</div>
+                            <div class="tier-price">R$ 6,80</div>
+                            <div class="tier-save">-2,9%</div>
+                        </button>
+                        <button type="button" class="tier-item" onclick="setQuantity(60)" data-min="60">
+                            <div class="tier-qty">60+ pacotes</div>
+                            <div class="tier-price">R$ 6,70</div>
+                            <div class="tier-save">-4,3%</div>
+                        </button>
+                        <button type="button" class="tier-item" onclick="setQuantity(80)" data-min="80">
+                            <div class="tier-qty">80+ pacotes</div>
+                            <div class="tier-price">R$ 6,60</div>
+                            <div class="tier-save">-5,7%</div>
+                        </button>
+                        <button type="button" class="tier-item" onclick="setQuantity(100)" data-min="100">
+                            <div class="tier-qty">100+ pacotes</div>
+                            <div class="tier-price">R$ 6,50</div>
+                            <div class="tier-save">-7,1%</div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="price-card">
+                <p class="price-eyebrow">Pacote Oficial Copa 2026</p>
+                <div class="price-main">
+                    <span class="price-currency">R$</span>
+                    <span class="price-amount" id="total-price">7</span>
+                </div>
+                <p class="price-sub" id="price-sub">1 pacote · 7 figurinhas</p>
+                <div class="price-divider"></div>
+
+                <div class="qty-row">
+                    <span class="qty-label">Quantidade de pacotes</span>
+                    <div class="qty-controls">
+                        <button class="qty-btn" onclick="changeQuantity(-1)">−</button>
+                        <div class="qty-num" id="quantity">1</div>
+                        <button class="qty-btn" onclick="changeQuantity(1)">+</button>
+                    </div>
+                </div>
+
+                <div class="info-strip">
+                    <span id="total-stickers">203 figurinhas</span>
+                    <span class="separator">|</span>
+                    <span id="price-per-sticker">R$ 6.90 por figurinha</span>
+                </div>
+
+                <a href="#" id="whatsapp-btn" target="_blank" class="cta-whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                    Comprar pelo WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="galeria" class="info-section">
+        <div class="container">
+            <h2>Raridades & Valores</h2>
+            <div class="info-grid">
+                <div class="info-card fade-in">
+                    <p class="card-eyebrow">Probabilidades Legend</p>
+                    <ul class="rarity-list">
+                        <li><span class="rarity-label rarity-lilas">Legend lilás</span><span>1 a cada 190 pacotes</span>
+                        </li>
+                        <li><span class="rarity-label rarity-bronze">Legend bronze</span><span>1 a cada 317
+                                pacotes</span></li>
+                        <li><span class="rarity-label rarity-prata">Legend prata</span><span>1 a cada 900 pacotes</span>
+                        </li>
+                        <li><span class="rarity-label rarity-ouro">Legend ouro</span><span>1 a cada 1.900 pacotes</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="info-card fade-in">
+                    <p class="card-eyebrow">Faixas de Valor</p>
+                    <ul class="price-list">
+                        <li><span>Comum (jogador regular)</span><strong>R$ 1 a R$ 3</strong></li>
+                        <li><span>Escudo metalizado</span><strong>R$ 5 a R$ 25</strong></li>
+                        <li><span>Rookie (jovem promessa)</span><strong>R$ 15 a R$ 50</strong></li>
+                        <li><span>Legend (lilás/bronze/prata)</span><strong>R$ 25 a R$ 80</strong></li>
+                        <li><span>Legend ouro</span><strong>R$ 600 ou mais</strong></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="final-cta">
+        <div class="container">
+            <h2>Pronto para começar sua coleção?</h2>
+            <p>Pacotes limitados da Copa 2026</p>
+            <a href="#preco" class="btn-primary btn-xl">
+                <i class="fas fa-shopping-cart"></i> GARANTIR PACOTE
+            </a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="logo">DIVINO TERROIR</div>
+            <p>Minas Gerais, Brasil • Edição Especial Copa 2026</p>
+            <a href="https://wa.me/553499437614">
+                +55 34 9943-7614
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        let quantity = 1;
+        const priceTiers = [
+            { min: 100, price: 6.50 },
+            { min: 80, price: 6.60 },
+            { min: 60, price: 6.70 },
+            { min: 40, price: 6.80 },
+            { min: 20, price: 6.90 },
+            { min: 0, price: 7.00 }
+        ];
+        function getPricePerPack(qty) {
+            for (let tier of priceTiers) {
+                if (qty >= tier.min) return tier.price;
+            }
+            return 7.00;
+        }
+        function updateTotal() {
+            const pricePerPack = getPricePerPack(quantity);
+            const total = (quantity * pricePerPack).toFixed(2);
+            document.getElementById('quantity').textContent = quantity;
+            document.getElementById('total-price').textContent = total;
+            document.getElementById('price-sub').textContent = `${quantity} pacote${quantity > 1 ? 's' : ''} · ${quantity * 7} figurinhas`;
+            document.getElementById('total-stickers').textContent = `${quantity * 7} figurinhas`;
+            document.getElementById('price-per-sticker').textContent = `R$ ${pricePerPack.toFixed(2)} por figurinha`;
+            updateTierHighlight();
+
+            const msg = `Olá! Quero comprar *${quantity} pacote${quantity > 1 ? 's' : ''}* de figurinhas da Copa 2026.%0ATotal: *R$ ${total}*%0A%0AQual o endereço para entrega?`;
+            document.getElementById('whatsapp-btn').href = `https://wa.me/553499437614?text=${msg}`;
+        }
+        function changeQuantity(n) {
+            quantity = Math.max(1, quantity + n);
+            updateTotal();
+        }
+        function setQuantity(n) {
+            if (quantity === n) {
+                quantity = 1;
+            } else {
+                quantity = n;
+            }
+            updateTotal();
+        }
+
+        function updateTierHighlight() {
+            let activeTier = null;
+            for (let tier of priceTiers) {
+                if (quantity >= tier.min) {
+                    activeTier = tier.min;
+                    break;
+                }
+            }
+            document.querySelectorAll('.tier-item').forEach(item => {
+                const tierMin = parseInt(item.dataset.min, 10);
+                item.classList.toggle('tier-active', tierMin === activeTier);
+            });
+        }
+
+        function addMouseEffect() {
+            const card = document.getElementById('vini-card');
+            if (card) {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = (e.clientX - rect.left) / rect.width - 0.5;
+                    const y = (e.clientY - rect.top) / rect.height - 0.5;
+                    card.style.transform = `perspective(1000px) rotateX(${y * -18}deg) rotateY(${x * 22}deg) translateZ(30px)`;
+                });
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateZ(0)';
+                });
+            }
+        }
+
+        // Controla a detecção do scroll para ativar o fade-in em todos os elementos configurados
+        function handleScroll() {
+            document.querySelectorAll('.fade-in').forEach(el => {
+                if (el.getBoundingClientRect().top <= window.innerHeight * 0.85) {
+                    el.classList.add('visible');
+                }
+            });
+        }
+
+        window.addEventListener('load', () => {
+            updateTotal();
+            handleScroll();
+            window.addEventListener('scroll', handleScroll);
+            addMouseEffect();
+            updateTierHighlight();
+        });
+    </script>
+</body>
+
+</html>
