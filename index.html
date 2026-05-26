@@ -787,28 +787,50 @@
             }
 
             .pricing {
-                padding: 3rem 1rem;
+                padding: 3rem 0; /* Remove preenchimento das bordas laterais da seção externa */
             }
 
-            /* Força os elementos a ocuparem o centro simétrico do container */
+            .container {
+                padding: 0 1rem; /* Margens perfeitamente iguais nas laterais */
+            }
+
+            /* Garante centralização impecável na visualização mobile */
             .pricing-container {
                 grid-template-columns: 1fr;
-                gap: 1.5rem;
+                gap: 2rem;
                 width: 100%;
+                max-width: 100%;
+                justify-content: center;
+                align-items: center;
                 justify-items: center;
             }
 
-            /* Remove margens e garante largura total fluida e idêntica em ambos os blocos */
-            .pricing-tiers-section, 
+            /* Corrige o preenchimento de desalinhamento interno dos dois blocos principais */
+            .pricing-tiers-section {
+                width: 100% !important;
+                max-width: 100% !important;
+                margin: 0 auto !important;
+                padding: 1.25rem !important; /* Torna o espaço interno simétrico */
+                align-items: center;
+            }
+
+            .pricing-tiers {
+                width: 100%;
+            }
+
             .price-card {
                 width: 100% !important;
                 max-width: 100% !important;
                 margin: 0 auto !important;
+                padding: 2rem 1.25rem !important;
+                justify-content: center; /* Alinha o conteúdo interno ao centro */
+                align-items: stretch;
             }
 
             .tiers-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 0.6rem;
+                width: 100%;
             }
 
             .tiers-grid button:last-child {
