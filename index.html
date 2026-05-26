@@ -769,7 +769,7 @@
             }
 
             .nav-links {
-                display: none; /* Esconde links redundantes no mobile para limpar espaço */
+                display: none;
             }
 
             .logo {
@@ -790,17 +790,27 @@
                 padding: 3rem 1rem;
             }
 
+            /* Força os elementos a ocuparem o centro simétrico do container */
             .pricing-container {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
+                width: 100%;
+                justify-items: center;
+            }
+
+            /* Remove margens e garante largura total fluida e idêntica em ambos os blocos */
+            .pricing-tiers-section, 
+            .price-card {
+                width: 100% !important;
+                max-width: 100% !important;
+                margin: 0 auto !important;
             }
 
             .tiers-grid {
-                grid-template-columns: repeat(2, 1fr); /* Mantém 2 colunas organizadas no celular */
+                grid-template-columns: repeat(2, 1fr);
                 gap: 0.6rem;
             }
 
-            /* Faz o último item do desconto ocupar a largura total se for ímpar */
             .tiers-grid button:last-child {
                 grid-column: span 2;
             }
@@ -811,7 +821,7 @@
             }
 
             .pack-card-3d {
-                transform: none !important; /* Desativa inclinação fixa agressiva no mobile */
+                transform: none !important;
                 max-width: 100%;
             }
             
@@ -826,7 +836,7 @@
             .rarity-list li, .price-list li {
                 font-size: 0.9rem;
                 padding: 0.8rem;
-                flex-wrap: wrap; /* Evita estouro de texto */
+                flex-wrap: wrap;
             }
 
             .final-cta {
@@ -836,14 +846,13 @@
 
         @media (max-width: 480px) {
             .tiers-grid {
-                grid-template-columns: 1fr; /* Em telas muito pequenas, empilha 1 por linha */
+                grid-template-columns: 1fr;
             }
             .tiers-grid button:last-child {
                 grid-column: span 1;
             }
         }
 
-        /* Classes de efeito scroll */
         .fade-in {
             opacity: 0;
             transform: translateY(20px);
@@ -1101,7 +1110,7 @@
 
         function addMouseEffect() {
             const card = document.getElementById('vini-card');
-            if (card && window.innerWidth > 860) { // Aplica efeito 3D apenas no desktop para evitar bugs no touch
+            if (card && window.innerWidth > 860) {
                 card.addEventListener('mousemove', (e) => {
                     const rect = card.getBoundingClientRect();
                     const x = (e.clientX - rect.left) / rect.width - 0.5;
